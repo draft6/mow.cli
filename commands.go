@@ -51,6 +51,19 @@ type Cmd struct {
 }
 
 /*
+NewCommand constructs a new command with the given name and description
+*/
+func NewCommand(name, desc string) *Cmd {
+	return &Cmd{
+		name:          name,
+		desc:          desc,
+		optionsIdx:    map[string]*container.Container{},
+		argsIdx:       map[string]*container.Container{},
+		ErrorHandling: flag.ExitOnError,
+	}
+}
+
+/*
 BoolParam represents a Bool option or argument
 */
 type BoolParam interface {
