@@ -4,10 +4,10 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/jawher/mow.cli/internal/lexer"
+	"github.com/draft6/mow.cli/internal/lexer"
 
-	"github.com/jawher/mow.cli/internal/container"
-	"github.com/jawher/mow.cli/internal/values"
+	"github.com/draft6/mow.cli/internal/container"
+	"github.com/draft6/mow.cli/internal/values"
 )
 
 // BoolArg describes a boolean argument

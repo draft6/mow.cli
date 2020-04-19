@@ -1,7 +1,7 @@
 # mow.cli
-[![Build Status](https://travis-ci.org/jawher/mow.cli.svg?branch=master)](https://travis-ci.org/jawher/mow.cli)
-[![GoDoc](https://godoc.org/github.com/github.com/jawher/mow.cli?status.svg)](https://godoc.org/github.com/jawher/mow.cli)
-[![Coverage Status](https://coveralls.io/repos/github/jawher/mow.cli/badge.svg?branch=master)](https://coveralls.io/github/jawher/mow.cli?branch=master)
+[![Build Status](https://travis-ci.org/draft6/mow.cli.svg?branch=master)](https://travis-ci.org/draft6/mow.cli)
+[![GoDoc](https://godoc.org/github.com/github.com/draft6/mow.cli?status.svg)](https://godoc.org/github.com/draft6/mow.cli)
+[![Coverage Status](https://coveralls.io/repos/github/draft6/mow.cli/badge.svg?branch=master)](https://coveralls.io/github/draft6/mow.cli?branch=master)
 
 Package cli provides a framework to build command line applications in Go with most of the burden of arguments parsing and validation placed on the framework instead of the user.
 
@@ -22,7 +22,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jawher/mow.cli"
+	"github.com/draft6/mow.cli"
 )
 
 func main() {
@@ -66,7 +66,7 @@ import (
 	"fmt"
 	"os"
 
-	cli "github.com/jawher/mow.cli"
+	cli "github.com/draft6/mow.cli"
 )
 
 type Config struct {
@@ -117,7 +117,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jawher/mow.cli"
+	"github.com/draft6/mow.cli"
 )
 
 func main() {
@@ -185,7 +185,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jawher/mow.cli"
+	"github.com/draft6/mow.cli"
 )
 
 // Global options available to any of the commands
@@ -286,7 +286,7 @@ cases including:
 To install this package, run the following:
 
 ```shell
-go get github.com/jawher/mow.cli
+go get github.com/draft6/mow.cli
 ```
 
 # Package Documentation

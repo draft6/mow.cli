@@ -7,12 +7,12 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/jawher/mow.cli/internal/container"
-	"github.com/jawher/mow.cli/internal/flow"
-	"github.com/jawher/mow.cli/internal/fsm"
-	"github.com/jawher/mow.cli/internal/lexer"
-	"github.com/jawher/mow.cli/internal/parser"
-	"github.com/jawher/mow.cli/internal/values"
+	"github.com/draft6/mow.cli/internal/container"
+	"github.com/draft6/mow.cli/internal/flow"
+	"github.com/draft6/mow.cli/internal/fsm"
+	"github.com/draft6/mow.cli/internal/lexer"
+	"github.com/draft6/mow.cli/internal/parser"
+	"github.com/draft6/mow.cli/internal/values"
 )
 
 /*
@@ -438,7 +438,8 @@ func (c *Cmd) Var(p VarParam) {
 	}
 }
 
-func (c *Cmd) doInit() error {
+// DoInit Initialize the command structure
+func (c *Cmd) DoInit() error {
 	if c.init != nil {
 		c.init(c)
 	}
@@ -635,7 +636,8 @@ func formatEnvVarsForHelp(envVars string) string {
 	return res
 }
 
-func (c *Cmd) parse(args []string, entry, inFlow, outFlow *flow.Step) error {
+// Parse
+func (c *Cmd) Parse(args []string, entry, inFlow, outFlow *flow.Step) error {
 	if c.helpRequested(args) {
 		c.PrintLongHelp()
 		c.onError(errHelpRequested)
@@ -689,10 +691,10 @@ func (c *Cmd) parse(args []string, entry, inFlow, outFlow *flow.Step) error {
 	arg := args[0]
 	for _, sub := range c.commands {
 		if sub.isAlias(arg) {
-			if err := sub.doInit(); err != nil {
+			if err := sub.DoInit(); err != nil {
 				panic(err)
 			}
-			return sub.parse(args[1:], entry, newInFlow, newOutFlow)
+			return sub.Parse(args[1:], entry, newInFlow, newOutFlow)
 		}
 	}
 

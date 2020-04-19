@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	cli "github.com/jawher/mow.cli"
+	cli "github.com/draft6/mow.cli"
 )
 
 func Example_greet() {

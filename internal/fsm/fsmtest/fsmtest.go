@@ -5,8 +5,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/jawher/mow.cli/internal/fsm"
-	"github.com/jawher/mow.cli/internal/matcher"
+	"github.com/draft6/mow.cli/internal/fsm"
+	"github.com/draft6/mow.cli/internal/matcher"
 )
 
 // NopeMatcher is a matcher that always fails

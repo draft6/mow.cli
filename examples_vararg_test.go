@@ -3,7 +3,7 @@ package cli_test
 import (
 	"fmt"
 
-	"github.com/jawher/mow.cli"
+	cli "github.com/jawher/mow.cli"
 )
 
 // Declare your type

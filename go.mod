@@ -1,4 +1,4 @@
-module github.com/jawher/mow.cli
+module github.com/draft6/mow.cli
 
 require (
 	github.com/stretchr/objx v0.2.0 // indirect

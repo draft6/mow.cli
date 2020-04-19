@@ -6,8 +6,8 @@ import (
 	"io"
 	"os"
 
-	"github.com/jawher/mow.cli/internal/container"
-	"github.com/jawher/mow.cli/internal/flow"
+	"github.com/draft6/mow.cli/internal/container"
+	"github.com/draft6/mow.cli/internal/flow"
 )
 
 /*
@@ -73,7 +73,7 @@ func (cli *Cli) parse(args []string, entry, inFlow, outFlow *flow.Step) error {
 		cli.onError(errVersionRequested)
 		return nil
 	}
-	return cli.Cmd.parse(args, entry, inFlow, outFlow)
+	return cli.Cmd.Parse(args, entry, inFlow, outFlow)
 }
 
 func (cli *Cli) versionSetAndRequested(args []string) bool {
@@ -97,7 +97,7 @@ In case of an incorrect usage, and depending on the configured ErrorHandling pol
 it may return an error, panic or exit
 */
 func (cli *Cli) Run(args []string) error {
-	if err := cli.doInit(); err != nil {
+	if err := cli.DoInit(); err != nil {
 		panic(err)
 	}
 	inFlow := &flow.Step{Desc: "RootIn", Exiter: exiter}
@@ -122,6 +122,14 @@ This should be used instead of os.Exit.
 */
 func Exit(code int) {
 	panic(flow.ExitCode(code))
+}
+
+/*
+SetOutputs overrides the output writers for stdout and stderr
+*/
+func SetOutputs(out io.Writer, err io.Writer) {
+	stdOut = out
+	stdErr = err
 }
 
 var exiter = func(code int) {

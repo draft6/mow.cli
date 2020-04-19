@@ -22,7 +22,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jawher/mow.cli"
+	"github.com/draft6/mow.cli"
 )
 
 func main() {
@@ -66,7 +66,7 @@ import (
 	"fmt"
 	"os"
 
-	cli "github.com/jawher/mow.cli"
+	cli "github.com/draft6/mow.cli"
 )
 
 type Config struct {
@@ -117,7 +117,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jawher/mow.cli"
+	"github.com/draft6/mow.cli"
 )
 
 func main() {
@@ -185,7 +185,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jawher/mow.cli"
+	"github.com/draft6/mow.cli"
 )
 
 // Global options available to any of the commands
