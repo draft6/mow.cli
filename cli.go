@@ -73,7 +73,7 @@ func (cli *Cli) parse(args []string, entry, inFlow, outFlow *flow.Step) error {
 		cli.onError(errVersionRequested)
 		return nil
 	}
-	return cli.Cmd.Parse(args, entry, inFlow, outFlow)
+	return cli.Cmd.parse(args, entry, inFlow, outFlow)
 }
 
 func (cli *Cli) versionSetAndRequested(args []string) bool {

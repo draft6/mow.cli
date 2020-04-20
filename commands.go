@@ -649,8 +649,14 @@ func formatEnvVarsForHelp(envVars string) string {
 	return res
 }
 
-// Parse
-func (c *Cmd) Parse(args []string, entry, inFlow, outFlow *flow.Step) error {
+// ParseWithNewState parsers as a new command / cli invocation
+func (c *Cmd) ParseWithNewState(args []string) error {
+	inFlow := &flow.Step{Desc: "RootIn", Exiter: exiter}
+	outFlow := &flow.Step{Desc: "RootOut", Exiter: exiter}
+	return c.parse(args, inFlow, inFlow, outFlow)
+}
+
+func (c *Cmd) parse(args []string, entry, inFlow, outFlow *flow.Step) error {
 	if c.helpRequested(args) {
 		c.PrintLongHelp()
 		c.onError(errHelpRequested)
@@ -707,7 +713,7 @@ func (c *Cmd) Parse(args []string, entry, inFlow, outFlow *flow.Step) error {
 			if err := sub.DoInit(); err != nil {
 				panic(err)
 			}
-			return sub.Parse(args[1:], entry, newInFlow, newOutFlow)
+			return sub.parse(args[1:], entry, newInFlow, newOutFlow)
 		}
 	}
 
